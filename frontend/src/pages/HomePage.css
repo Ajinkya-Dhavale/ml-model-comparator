@@ -1,0 +1,74 @@
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes zoomIn {
+    0% { transform: scale(0.95); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+    opacity: 0;
+  }
+  
+  .fade-in.delay-1 {
+    animation-delay: 0.3s;
+  }
+  .fade-in.delay-2 {
+    animation-delay: 0.6s;
+  }
+  .fade-in.delay-3 {
+    animation-delay: 0.9s;
+  }
+  
+  .slide-up {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  .slide-up.delay-1 {
+    animation-delay: 0.3s;
+  }
+  .slide-up.delay-2 {
+    animation-delay: 0.6s;
+  }
+  
+  /* Card hover effect */
+  .card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+  }
+  
+  .animated-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .animated-card.animated-delay-0 {
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.1s;
+  }
+  .animated-card.animated-delay-1 {
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.3s;
+  }
+  .animated-card.animated-delay-2 {
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.5s;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
