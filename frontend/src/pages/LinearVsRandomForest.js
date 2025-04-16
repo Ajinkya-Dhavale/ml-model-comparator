@@ -129,6 +129,7 @@ const LinearVsRandomForest = () => {
 
   // Handler for custom dataset training.
   const handleCustomTrain = async () => {
+    setIrisTarget("")
     if (!uploadedFile) return
     try {
       setLoading(true)

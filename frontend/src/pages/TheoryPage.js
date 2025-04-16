@@ -96,9 +96,17 @@ const TheoryPage = () => {
             </Typography>
             <Box sx={{ p: 2, bgcolor: "grey.100", borderRadius: 1, mb: 3, overflow: "auto" }}>
               <Typography variant="body1" sx={{ fontFamily: "monospace", whiteSpace: "pre" }}>
-                {`from sklearn.linear_model import LinearRegression
+                {`import pandas as pd
+from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
+
+# Read the dataset
+data = pd.read_csv("your_file.csv")  # Replace with your actual CSV file path
+
+# Define features (X) and target (y)
+X = data[["feature1", "feature2", "feature3"]]  # Replace with your actual feature column names
+y = data["target"]  # Replace with your actual target column name
 
 # Split the data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -227,9 +235,17 @@ intercept = model.intercept_`}
             </Typography>
             <Box sx={{ p: 2, bgcolor: "grey.100", borderRadius: 1, mb: 3, overflow: "auto" }}>
               <Typography variant="body1" sx={{ fontFamily: "monospace", whiteSpace: "pre" }}>
-                {`from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
+                {`import pandas as pd
+from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, accuracy_score
+
+# Read the dataset
+data = pd.read_csv("your_file.csv")  # Replace with actual file name
+
+# Define features (X) and target (y)
+X = data[["feature1", "feature2", "feature3"]]  # Replace with your actual feature columns
+y = data["target"]  # Replace with your target column
 
 # Split the data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -249,13 +265,14 @@ accuracy = accuracy_score(y_test, y_pred_clf)
 # Feature importance
 feature_importance = rf_reg.feature_importances_  # or rf_clf.feature_importances_`}
               </Typography>
+
             </Box>
           </Paper>
 
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} sx={{ width: "48%" }}>
               <Card>
-               
+
                 <CardContent>
                   <Typography variant="h6" gutterBottom>
                     Advantages
@@ -355,9 +372,17 @@ feature_importance = rf_reg.feature_importances_  # or rf_clf.feature_importance
             </Typography>
             <Box sx={{ p: 2, bgcolor: "grey.100", borderRadius: 1, mb: 3, overflow: "auto" }}>
               <Typography variant="body1" sx={{ fontFamily: "monospace", whiteSpace: "pre" }}>
-                {`from sklearn.linear_model import LogisticRegression
+                {`import pandas as pd
+from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+
+# Read the dataset
+data = pd.read_csv("your_file.csv")  # Replace with actual file name
+
+# Define features (X) and target (y)
+X = data[["feature1", "feature2", "feature3"]]  # Replace with your actual feature columns
+y = data["target"]  # Replace with your target column
 
 # Split the data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -379,6 +404,7 @@ cm = confusion_matrix(y_test, y_pred)
 coefficients = model.coef_
 intercept = model.intercept_`}
               </Typography>
+
             </Box>
           </Paper>
 

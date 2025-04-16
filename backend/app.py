@@ -1,4 +1,3 @@
-# app.py
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import pandas as pd
@@ -15,11 +14,10 @@ import numpy as np
 app = Flask(__name__)
 CORS(app)
 
-# Global variables for trained models and settings
-trained_models = {}       # {"Model1": model1, "Model2": model2}
-model_mode = "regression" # either "regression" or "classification"
-label_encoder = None      # used if target is non-numeric
-prediction_schema = []    # prediction schema built solely from the selected independent features
+trained_models = {}       
+model_mode = "regression" 
+label_encoder = None      
+prediction_schema = []    
 
 def build_prediction_schema(df, features):
     """
@@ -111,7 +109,6 @@ def train_and_evaluate(X_train, X_test, y_train, y_test, feature_names, is_regre
         trained_models["Model2"] = rf
         
     else:
-        # Classification models
         lr = LogisticRegression(max_iter=1000)
         start_time = time.time()
         lr.fit(X_train, y_train)
